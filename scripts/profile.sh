@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Load the profiling suite on the board
-./FunkProgMono.exe ./kbuild/tests/profiling/kernel_profiling/kernel_profile.hex /dev/ttyACM0 57600
+./util/FunkProgMono.exe ./kbuild/tests/profiling/kernel_profiling/kernel_profile.hex /dev/ttyACM0 57600
 #./FunkProgMono.exe ./kbuild/tests/profiling/kernel_profiling/kernel_profile.hex COM5 57600
 
 # Open the terminal, run profiling app for 30 seconds
 echo "--[Running Sanity Tests]--"
-./FunkTermMono.exe /dev/ttyACM0 57600 ASCII > ./profile.txt &
+./util/FunkTermMono.exe /dev/ttyACM0 57600 ASCII > ./profile.txt &
 #./FunkTermMono.exe COM5 57600 ASCII > ./profile.txt &
 pid=$!
 sleep 60
