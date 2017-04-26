@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Build documentation source stage using the kernel and services directories
+# Build documentation using the kernel and services directories
 root_dir=`pwd`
 echo "Root_Dir" ${root_dir}
 cd ./kernel

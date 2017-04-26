@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-# Do a clean build of all the code 
-./scripts/build.sh
+cd ./kbuild
+ninja clean
+ninja
+cd ..
 
 # Run the profiling test app, gather the stats (which are re-inserted into the documentation)
 ./scripts/profile.sh

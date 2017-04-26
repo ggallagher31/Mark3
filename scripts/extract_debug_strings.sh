@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ELF_FILES=`find ./stage/dbg -type f -and -name *.elf`
+ELF_FILES=`find ./kbuild -type f -and -name *.elf`
 
 # Go through all of the elf files in the pathspace and extract out all of the debug strings into raw binary format, stored
 # as raw binary files that are easily processed by a log reassembler/viewer

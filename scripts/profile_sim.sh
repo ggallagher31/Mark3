@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # Open the terminal, run profiling app for 30 seconds
 echo "--[Running Sanity Tests]--"
-flavr --silent --hexfile ./stage/app/avr/atmega328p/gcc/kernel_profile.hex > ./profile.txt &
+flavr --silent --hexfile ./kbuild/tests/profiling/kernel_profiling/kernel_profile.hex > ./profile.txt &
 pid=$!
 sleep 60
 kill ${pid}

@@ -90,16 +90,7 @@ elif [ "${FORMAT}" = "doxygen" ]; then
     echo    "Results are not necessarily indicative of relative or absolute performance"
     echo    "on other platforms or toolchains."
     echo    "\section SIZEPROFILEINFO Information"
-    IFS=" "
-    SVNROOT=$(svn info | grep -e Root:)
-    SVNREV=$(svn info | grep -e Revision:)
-    SVNURL=$(svn info | grep -e URL:)
-    echo    "Subversion Repository Information:"
-    echo    "    - "${SVNROOT}
-    echo    "    - "${SVNREV}
-    echo    "    - "${SVNURL}
-    echo    "    ."
-    IFS=${IFS_CACHE}
+    FS=${IFS_CACHE}
     echo    ""
     echo    "Date Profiled:"
     DATEINFO=$(date)
@@ -123,7 +114,7 @@ IFS="
 "
 ### Run the avr-size utility to get a listing of all component sizes (code/data)
 ### data is all 0, which is likely due to the fact that this is a library
-MARK3_DATA=$(${SIZE_BIN} ./stage/lib/${ARCH}/${VARIANT}/${TOOLCHAIN}/libmark3.a)
+MARK3_DATA=$(${SIZE_BIN} ./kbuild/kernel/libmark3.a)
 
 
 ### Parse through the reported data, line at a time, and convert the data from the

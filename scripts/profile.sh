@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Load the profiling suite on the board
-./FunkProgMono.exe ./stage/app/avr/atmega328p/gcc/kernel_profile.hex /dev/ttyACM0 57600
-#./FunkProgMono.exe ./stage/app/avr/atmega328p/gcc/kernel_profile.hex COM5 57600
+./FunkProgMono.exe ./kbuild/tests/profiling/kernel_profiling/kernel_profile.hex /dev/ttyACM0 57600
+#./FunkProgMono.exe ./kbuild/tests/profiling/kernel_profiling/kernel_profile.hex COM5 57600
 
 # Open the terminal, run profiling app for 30 seconds
 echo "--[Running Sanity Tests]--"

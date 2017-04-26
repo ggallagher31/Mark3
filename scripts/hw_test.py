@@ -12,7 +12,7 @@ import pexpect
 platform  = "avr"
 cpu       = "atmega328p"
 toolchain = "gcc"
-stage	= "./stage"
+stage	= "./kbuild"
 
 # Programming/serial interface used to communicate with 
 device	= "/dev/ttyACM0"
@@ -23,7 +23,7 @@ test_list = ["ut_logic", "ut_thread", "ut_semaphore", "ut_mutex", "ut_eventflag"
 
 # Run each test in succession
 for test in test_list:
-	load_cmd = "mono ./util/FunkProgMono.exe %s/app/%s/%s/%s/%s.hex %s %s" % (stage, platform, cpu, toolchain, test, device, baud)
+	load_cmd = "mono ./util/FunkProgMono.exe %s/tests/unit/%s/%s.hex %s %s" % (stage, test, test, device, baud)
 	print "--[Loading Binary for %s]--" % test
 	child = pexpect.spawn( load_cmd )
 	child.expect( pexpect.EOF, timeout=240 )

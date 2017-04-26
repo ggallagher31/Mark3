@@ -24,10 +24,10 @@ See license.txt for more information
 #if KERNEL_USE_IDLE_FUNC
 #define STACK_SIZE_APP (300) //!< Size of the main app's stack
 #else
-#define STACK_SIZE_APP (140)
+#define STACK_SIZE_APP (200)
 #endif
 
-#define STACK_SIZE_IDLE (140) //!< Size of the idle thread stack
+#define STACK_SIZE_IDLE (200) //!< Size of the idle thread stack
 
 //---------------------------------------------------------------------------
 #define UART_SIZE_RX (12) //!< UART RX Buffer size
